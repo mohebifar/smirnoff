@@ -1,0 +1,37 @@
+package:
+  name: smarty
+  version: 0.0.0
+
+source:
+  path: ../..
+
+build:
+  preserve_egg_dir: True
+  number: 0
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pandas
+
+  run:
+    - python
+    - numpy
+    - networkx
+    - lxml
+    - openmoltools >=0.7.3
+    - parmed
+    - matplotlib
+    - pandas
+
+test:
+  requires:
+    - nose
+    - nose-timer
+  imports:
+    - smarty
+
+about:
+  home: https://github.com/open-forcefield-group/smarty
+  license: MIT
