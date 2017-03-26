@@ -25,7 +25,7 @@ script:
   # Build the recipe
   - conda build devtools/conda-recipe
   # Install
-  - conda install --yes --use-local smarty
+  - conda install --yes --use-local smirnoff
   # Run tests
   - conda install --yes nose nose-timer
   - cd devtools && nosetests -vv --nocapture --with-timer $PACKAGENAME && cd ..
