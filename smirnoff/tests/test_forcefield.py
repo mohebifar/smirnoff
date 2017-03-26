@@ -1,17 +1,17 @@
 from functools import partial
-from smarty import ForceField
-from smarty import generateTopologyFromOEMol
-import smarty
+from smirnoff import ForceField
+from smirnoff import generateTopologyFromOEMol
+import smirnoff
 import openeye
 import os
-from smarty.utils import get_data_filename
+from smirnoff.utils import get_data_filename
 from simtk.openmm import app
 from simtk.openmm.app import element as elem
 from simtk.openmm.app import Topology
 from simtk import unit, openmm
 import numpy as np
 from io import StringIO
-from smarty.forcefield_utils import *
+from smirnoff.forcefield_utils import *
 import tempfile
 import parmed
 import os
@@ -265,7 +265,7 @@ def check_system_creation_from_molecule(forcefield, mol, chargeMethod=None, verb
 
     Parameters
     ----------
-    forcefield : smarty.ForceField
+    forcefield : smirnoff.ForceField
         SMIRFF forcefield
     mol : oechem.OEMol
         Molecule to test (need not have coordinates)
@@ -274,7 +274,7 @@ def check_system_creation_from_molecule(forcefield, mol, chargeMethod=None, verb
 
     """
 
-    from smarty.forcefield import generateTopologyFromOEMol
+    from smirnoff.forcefield import generateTopologyFromOEMol
     topology = generateTopologyFromOEMol(mol)
     system = forcefield.createSystem(topology, [mol], chargeMethod=chargeMethod, verbose=verbose)
     # Test energy computation.
@@ -287,7 +287,7 @@ def check_system_creation_from_topology(forcefield, topology, mols, positions, c
 
     Parameters
     ----------
-    forcefield : smarty.ForceField
+    forcefield : smirnoff.ForceField
         SMIRFF forcefield
     topology : simtk.openmm.app.Topology
         Topology to construct system from
@@ -298,7 +298,7 @@ def check_system_creation_from_topology(forcefield, topology, mols, positions, c
         Charge method to use in creating system
 
     """
-    from smarty.forcefield import CutoffPeriodic
+    from smirnoff.forcefield import CutoffPeriodic
     system = forcefield.createSystem(topology, mols, verbose=verbose, chargeMethod=chargeMethod, nonbondedMethod=CutoffPeriodic)
     # Test energy computation.
     check_energy_is_finite(system, positions)
@@ -411,7 +411,7 @@ def test_smirff_energies_vs_parmatfrosst(verbose=False):
 
 def test_label_molecules(verbose=False):
     """Test labeling/getting stats on labeling molecules"""
-    molecules = smarty.utils.read_molecules(get_data_filename('molecules/AlkEtOH-tripos.mol2.gz'), verbose=verbose)
+    molecules = smirnoff.utils.read_molecules(get_data_filename('molecules/AlkEtOH-tripos.mol2.gz'), verbose=verbose)
     ffxml = get_data_filename('forcefield/Frosst_AlkEtOH.ffxml')
     get_molecule_parameterIDs( molecules, ffxml)
 
@@ -571,7 +571,7 @@ def test_change_parameters(verbose=False):
     ffxml = get_data_filename('forcefield/Frosst_AlkEtOH.ffxml')
     ff = ForceField(ffxml)
 
-    from smarty.forcefield import generateTopologyFromOEMol
+    from smirnoff.forcefield import generateTopologyFromOEMol
     topology = generateTopologyFromOEMol(mol)
     # Create initial system
     system = ff.createSystem(topology, [mol], verbose=verbose)
