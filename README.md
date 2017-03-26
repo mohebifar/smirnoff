@@ -13,38 +13,23 @@ This repository houses the SMIRNOFF SMIRKS-based force field format, along with 
 * `.travis.yml` - travis-ci continuous integration file
 * `utilities/` - some utility functionality relating to the project; initially, for conversion of parm@frosst modified frcmod files to SMIRNOFF XML.
 
-## Prerequisites
-
-Install [miniconda](http://conda.pydata.org/miniconda.html) first. On `osx` with `bash`, this is:
-```
-wget https://repo.continuum.io/miniconda/Miniconda2-latest-MacOSX-x86_64.sh
-bash Miniconda2-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda
-export PATH="$HOME/miniconda/bin:${PATH}""
-```
-
-You must first install the OpenEye toolkit:
-```
-pip install -i https://pypi.anaconda.org/OpenEye/simple OpenEye-toolkits
-```
-
-Install other conda dependencies:
-```
-conda install --yes numpy networkx
-conda install --yes -c omnia openmoltools
-conda install --yes -c omnia parmed
-```
-
-NOTE: We'll add a better way to install these dependencies via `conda` soon.
-
 ## Installation
 
-Install `smirnoff` from the `smirnoff/` directory with:
+We recommend the [miniconda](http://conda.pydata.org/miniconda.html) Python distribution.
+To install `miniconda` on `osx` with `bash`, this is:
 ```bash
-pip install .
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh -b -p $HOME/miniconda3
+export PATH="$HOME/miniconda3/bin:${PATH}"
 ```
-If you modify the `smirnoff` source code (rather than the examples), reinstall with
+
+SMIRNOFF currently requires the OpenEye toolkit (which requires a [license](https://www.eyesopen.com/licensing-philosophy) that is free for academics indenting to rapidly release results into the public domain):
 ```bash
-pip install . --upgrade
+pip install -i https://pypi.anaconda.org/OpenEye/simple OpenEye-toolkits
+```
+Install `smirnoff` via conda:
+```bash
+conda install --yes -c omnia openforcefield-smirnoff
 ```
 
 ## Documentation
