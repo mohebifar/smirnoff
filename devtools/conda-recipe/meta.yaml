@@ -1,5 +1,5 @@
 package:
-  name: smarty
+  name: smirnoff
   version: 0.0.0
 
 source:
@@ -33,5 +33,5 @@ test:
     - smarty
 
 about:
-  home: https://github.com/open-forcefield-group/smarty
+  home: https://github.com/open-forcefield-group/smirnoff
   license: MIT
