@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/open-forcefield-group/smarty.svg?branch=master)](https://travis-ci.org/open-forcefield-group/smarty)
+[![Build Status](https://travis-ci.org/open-forcefield-group/smirnoff.svg?branch=master)](https://travis-ci.org/open-forcefield-group/smirnoff?branch=master)
 
 # `SMIRNOFF`: SMIRks Native Open Force Field
 
@@ -48,8 +48,8 @@ It can also be of interest to know what SMIRNOFF parameters would be applied to 
 ## Contributors
 
 * [David L. Mobley (UCI)](https://github.com/davidlmobley)
-* [Caitlin Bannan (UCI)](https://github.com/bannanc)
 * [John D. Chodera (MSKCC)](https://github.com/jchodera)
+* [Caitlin Bannan (UCI)](https://github.com/bannanc)
 * [Camila Zanette (UCI)](https://github.com/camizanette)
 * [Christopher I. Bayly (OpenEye)](https://github.com/cbayly13)
 * [Nathan M. Lim (UCI)](https://github.com/nathanmlim)
