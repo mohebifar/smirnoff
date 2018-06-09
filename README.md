@@ -2,7 +2,7 @@
 
 # `SMIRNOFF`: SMIRks Native Open Force Field
 
-This repository houses the SMIRNOFF SMIRKS-based force field format, along with classes to parameterize OpenMM systems given [SMIRNOFF `.ffxml` format files](https://github.com/open-forcefield-group/smarty/blob/master/The-SMIRNOFF-force-field-format.md).
+This repository houses the SMIRNOFF SMIRKS-based force field format, along with classes to parameterize OpenMM systems given [SMIRNOFF `.ffxml` format files](The-SMIRNOFF-force-field-format.md).
 
 ## Manifest
 
@@ -34,7 +34,7 @@ conda install --yes -c omnia openforcefield-smirnoff
 
 ## Documentation
 
-The SMIRNOFF force field format is documented [here](https://github.com/open-forcefield-group/smirnoff/blob/master/The-SMIRNOFF-force-field-format.md).
+The SMIRNOFF force field format is documented [here](The-SMIRNOFF-force-field-format.md).
 
 The SMIRNOFF forcefield format is available in sample form under `data/forcefield`, and is handled by `forcefield.py`.
  An example comparing SMIRNOFF versus AMBER energies for the parm@frosst forcefield is provided under
